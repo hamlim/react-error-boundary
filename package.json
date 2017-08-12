@@ -1,0 +1,17 @@
+{
+  "name": "react-error-boundary",
+  "version": "1.0.0",
+  "description": "A simple error boundary component for React 16+",
+  "main": "dist/index.js",
+  "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1"
+  },
+  "scripts": {
+    "build": "babel src/index.js --out-file dist/index.js",
+    "postbuild": "cp dist/index.js demo/src/errorboundary.js"
+  }
+}
