@@ -9,7 +9,7 @@ An unopinionated `<ErrorBoundary />` React component for React 16+.
   >
     {error => error
       ? (
-        <h1>Oh no an error occured!</h1>
+        <h1>Oh no an error occurred!</h1>
       )
       : (
         <Application />
