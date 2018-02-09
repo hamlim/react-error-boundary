@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1"
