@@ -12,20 +12,35 @@
     "@babel/core": "^7.0.0-beta.44",
     "@babel/plugin-proposal-class-properties":
       "^7.0.0-beta.44",
-    "@babel/preset-env": "^7.0.0-beta.44"
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "@babel/preset-react": "^7.0.0-beta.44",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^22.4.3",
+    "jest": "^22.4.3",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-testing-library": "^1.9.4"
   },
   "peerDependencies": {
-    "react": "16.3.1",
-    "prop-types": "15.6.1"
+    "prop-types": "15.6.1",
+    "react": "16.3.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
   },
   "scripts": {
-    "build": "babel src/index.js --out-file dist/index.js",
+    "test": "jest --watch",
+    "build":
+      "babel src/index.js --out-file dist/index.js --ignore test.js",
     "prepublish":
-      "babel src/ --out-dir dist/ --ignore=test.js",
+      "babel src/ --out-dir dist/ --ignore test.js",
     "postbuild":
       "cp dist/index.js demo/src/errorboundary.js"
   },
   "babel": {
-    "plugins": ["@babel/plugin-proposal-class-properties"]
+    "plugins": ["@babel/plugin-proposal-class-properties"],
+    "presets": ["@babel/env", "@babel/react"]
   }
 }
