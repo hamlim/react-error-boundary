@@ -5,7 +5,7 @@ An unopinionated `<ErrorBoundary />` React component for React 16+.
 ```JSX
 <div>
   <ErrorBoundary
-    onCaughtError={logError}
+    onError={logError}
   >
     {error => error
       ? (
