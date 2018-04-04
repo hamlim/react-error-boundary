@@ -4,10 +4,12 @@ import PropTypes from 'prop-types'
 export default class ErrorBoundary extends Component {
   static propTypes = {
     onCaughtError: PropTypes.func,
+    onError: PropTypes.func,
     children: PropTypes.func,
   }
   static defaultProps = {
     onCaughtError() {},
+    onError() {},
     children() {},
   }
   state = {
@@ -15,6 +17,7 @@ export default class ErrorBoundary extends Component {
   }
   componentDidCatch(error) {
     this.setState(() => ({ error }))
+    this.props.onError(error)
     this.props.onCaughtError(error)
   }
   render() {
